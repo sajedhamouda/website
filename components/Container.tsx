@@ -1,14 +1,4 @@
-type Props = {
-  children: React.ReactNode;
-  className?: string;
-};
-
-export default function Container({ children, className = "" }: Props) {
-  return (
-    <div
-      className={`mx-auto w-full max-w-6xl px-6 md:px-10 ${className}`.trim()}
-    >
-      {children}
-    </div>
-  );
+/* eslint-disable @typescript-eslint/no-explicit-any */
+export default function Container({ children }: any) {
+  return <div className="max-w-[720px] mx-auto px-6">{children}</div>;
 }

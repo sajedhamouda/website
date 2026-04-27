@@ -1,21 +1,18 @@
 "use client";
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { motion } from "framer-motion";
 
-type Props = {
-  children: React.ReactNode;
-  delay?: number;
-  className?: string;
-};
-
-export default function Reveal({ children, delay = 0, className = "" }: Props) {
+export default function Reveal({ children }: any) {
   return (
     <motion.div
-      className={className}
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.28 }}
-      transition={{ duration: 0.62, delay, ease: [0.22, 1, 0.36, 1] }}
+      viewport={{ once: true, amount: 0.6 }}
+      transition={{
+        duration: 0.85,
+        ease: [0.16, 1, 0.3, 1],
+      }}
     >
       {children}
     </motion.div>
